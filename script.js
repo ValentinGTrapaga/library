@@ -38,8 +38,15 @@ function Book(title, author, pages, read = false) {
 }
 
 function addBook() {
-    let bookToAdd = new Book(inputTitle.value, inputAuthor.value, parseInt(inputPages.value), inputRead.checked)
-    myLibrary.push(bookToAdd)
+    if( inputTitle.value != "" &&
+        inputAuthor.value != "" &&
+        inputPages.value != ""
+        ) {
+            let bookToAdd = new Book(inputTitle.value, inputAuthor.value, parseInt(inputPages.value), inputRead.checked)
+            myLibrary.push(bookToAdd)
+        } else {
+            alert("Every field of the form is required")
+        }
 }
 
 function loadLibrary() {
@@ -67,12 +74,12 @@ function loadLibrary() {
     }
     table.innerHTML = `
         <table id="table">
-            <tr id="table-head">
+            <tr id="table-head" class="table is-hoverable">
                 <th>Title</th>
                 <th>Author</th>
                 <th>Pages</th>
                 <th>Read</th>
-                <th>Delete</th>
+                <th></th>
             </tr>
         </table>`
     table.innerHTML += textToInject
