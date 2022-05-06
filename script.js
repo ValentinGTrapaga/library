@@ -21,7 +21,7 @@ let myLibrary = [
 
 const submit = document.getElementById('submit-btn')
 const formInputs = document.getElementById('book-form').elements
-const table = document.getElementById('table')
+const table = document.getElementById('book-table')
 const inputTitle = document.getElementById('title')
 const inputAuthor = document.getElementById('author')
 const inputPages = document.getElementById('pages')
